@@ -6,6 +6,7 @@ def save_to_csv(name, email):
     new_entry = pd.DataFrame([[name, email]], columns=['Name', 'Email'])
     
     try:
+        
         existing_data = pd.read_csv('finai_waiting_list.csv')
         updated_data = pd.concat([existing_data, new_entry], ignore_index=True)
     except FileNotFoundError:
